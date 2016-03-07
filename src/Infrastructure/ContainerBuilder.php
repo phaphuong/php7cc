@@ -138,7 +138,7 @@ class ContainerBuilder
             ));
         };
         $container['parser'] = function ($c) {
-            return (new ParserFactory)->create(ParserFactory::PREFER_PHP7);;
+            return (new ParserFactory)->create(ParserFactory::PREFER_PHP7, $c['lexer']);
         };
 
         $this->addVisitors($container);
