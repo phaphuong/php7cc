@@ -4,6 +4,7 @@ namespace Sstalle\php7cc\Infrastructure;
 
 use PhpParser\NodeVisitor\NameResolver;
 use PhpParser\Parser;
+use PhpParser\ParserFactory;
 use Pimple\Container;
 use Sstalle\php7cc\CLIResultPrinter;
 use Sstalle\php7cc\ContextChecker;
@@ -137,7 +138,7 @@ class ContainerBuilder
             ));
         };
         $container['parser'] = function ($c) {
-            return new Parser($c['lexer']);
+            return (new ParserFactory)->create(ParserFactory::PREFER_PHP7);;
         };
 
         $this->addVisitors($container);
