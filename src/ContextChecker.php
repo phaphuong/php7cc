@@ -31,7 +31,7 @@ class ContextChecker
      * @param ExtendedLexer $lexer
      * @param Traverser     $traverser
      */
-    public function __construct(Parser $parser, ExtendedLexer $lexer, Traverser $traverser)
+    public function __construct(Parser\Multiple $parser, ExtendedLexer $lexer, Traverser $traverser)
     {
         $this->parser = $parser;
         $this->lexer = $lexer;
